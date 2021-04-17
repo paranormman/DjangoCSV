@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>UPLOAD</h1>
+<form method="POST" action="/visual/index/" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" class="mb-xs mt-xs mr-xs btn btn-lg btn-primary" name=" file ">
+    <button type="submit " class="mb-xs mt-xs mr-xs btn btn-primary "><i class="fa fa-cloud "></i> Upload file </button>
+</form>
+<!-- <form method="POST" action="/visual/index/" enctype="multipart/form-data">
+    {% csrf_token %}
+    <button type="submit " class="mb-xs mt-xs mr-xs btn btn-primary "><i class="fa fa-cloud "></i> calculate </button>
+</form> -->
+
+{% if url %}
+<h4>Uploaded file: <a href="{{ url }}">{{ url }}</a></h4>
+{% endif %} {% endblock %}
